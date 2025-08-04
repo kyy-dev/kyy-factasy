@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Factasy</title>
+  <style>
+    /* Reset dasar */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fffdf8;
+  color: #333;
+  line-height: 1.6;
+  padding: 1rem;
+}
+
+.hamburger {
+  font-size: 2rem;
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  cursor: pointer;
+  z-index: 1000;
+  user-select: none;
+}
+
+@media (min-width: 768px) {
+  .hamburger {
+    display: none; /* Sembunyikan di layar besar (opsional) */
+  }
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ff7f50;
+}
+
+header span {
+  color: #ffb347;
+  font-weight: bold;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+}
+
+/* Grid Fakta */
+.fact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.fact-card {
+  background: #fff;
+  border: 2px dashed #ffecd2;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fact-card:hover {
+  transform: scale(1.02);
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.fact-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ff8c42;
+}
+
+.fact-card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Footer */
+/* Footer Update */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  background: linear-gradient(90deg, #ffecd2, #fcb69f);
+  color: #333;
+  margin-top: 2rem;
+  border-top: 2px dashed #ffa07a;
+}
+
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background-color: #fff7e6;
+  position: absolute;
+  top: 60px;
+  right: 1rem;
+  border: 1px solid #ffc;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  z-index: 999;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  margin: 10px 0;
+}
+
+.mobile-menu a {
+  color: #ff8c42;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mobile-menu a:hover {
+  text-decoration: underline;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Input Pencarian */
+#search-box {
+  width: 100%;
+  max-width: 320px;
+  padding: 0.8rem 1rem;
+  border: 2px dashed #ffb6b6;
+  border-radius: 20px;
+  font-size: 1rem;
+  outline: none;
+  background-color: #fffafa;
+  color: #444;
+  box-shadow: 1px 1px 8px rgba(255, 182, 193, 0.3);
+  transition: 0.3s ease;
+  margin: 1rem auto;
+  display: block;
+  text-align: center;
+}
+
+#search-box::placeholder {
+  color: #ff9999;
+  font-style: italic;
+}
+
+#search-box:focus {
+  border-color: #ff7f7f;
+  box-shadow: 0 0 10px rgba(255, 140, 140, 0.4);
+}
+  </style>
+</head>
+<body>
+    <header>
+      <div class="hamburger">&#9776;</div>
+      <img src="logo.jpg" alt="Factasy Logo" class="logo" />
+      <h1>Selamat datang di <span>Factasy</span>!</h1>
+      <p>🌟 Kumpulan fakta unik dan menarik dari seluruh dunia!</p>
+  </header>
+  
+  <nav class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#">Beranda</a></li>
+    <li><a href="support.html">Support</a></li>
+  </ul>
+</nav>
+
+  <main class="fact-grid">
+    <input type="text" id="search-box" placeholder="Cari fakta..." />
+    <div class="fact-card">
+      <h3>🐙 Gurita punya tiga hati</h3>
+      <p>Dua untuk memompa darah ke insang, satu ke seluruh tubuh.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🦋 Kupu-kupu mencium dengan kakinya</h3>
+      <p>Reseptor rasa mereka ada di bagian bawah kaki.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🍯 Madu tidak pernah basi</h3>
+      <p>Bahkan madu berusia 3000 tahun dari Mesir masih bisa dimakan.</p>
+    </div>
+    <div class="fact-card">
+      <h3>💡 Bola lampu pertama bisa menyala 1500 jam</h3>
+      <p>Penemuan Thomas Edison telah mengubah dunia sampai hari ini.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌌 Luar angkasa itu sunyi</h3>
+      <p>Tidak ada udara, jadi suara tidak bisa merambat di sana.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🧠 Otak manusia bisa menghasilkan 20 watt listrik</h3>
+      <p>Cukup untuk menyalakan bola lampu kecil!</p>
+    </div>
+    <div class="fact-card">
+      <h3>🐨 Koala punya sidik jari mirip manusia</h3>
+      <p>Bisa membingungkan detektif forensik!</p>
+    </div>
+    <div class="fact-card">
+      <h3>🎈 Helium bisa keluar dari Bumi</h3>
+      <p>Karena terlalu ringan, helium bisa lepas ke luar angkasa.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🥶 Antartika adalah gurun</h3>
+      <p>Walaupun bersalju, ia sangat kering dan jarang hujan.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🚀 Jejak kaki di Bulan bisa bertahan jutaan tahun</h3>
+      <p>Karena tidak ada angin atau hujan.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🐦 Burung kolibri bisa terbang mundur</h3>
+      <p>Satu-satunya burung dengan kemampuan ini.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🔮 Kaca itu cair yang sangat lambat</h3>
+      <p>Dalam ratusan tahun, kaca jendela bisa "mengalir".</p>
+    </div>
+    <div class="fact-card">
+      <h3>🦶 Jejak kaki pertama di dunia berusia 550 juta tahun</h3>
+      <p>Ditemukan di Tiongkok pada fosil kecil purba.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌍 Bumi tidak bulat sempurna</h3>
+      <p>Sedikit gepeng di kutub dan mengembung di khatulistiwa.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🐘 Gajah takut semut</h3>
+      <p>Karena bisa masuk ke dalam belalai!</p>
+    </div>
+    <div class="fact-card">
+      <h3>🦠 Tubuh manusia punya lebih banyak bakteri daripada sel</h3>
+      <p>Kebanyakan dari mereka baik dan penting.</p>
+    </div>
+    <div class="fact-card">
+      <h3>📱 Lebih banyak orang punya HP daripada sikat gigi</h3>
+      <p>Aneh tapi nyata menurut survei global.</p>
+    </div>
+    <div class="fact-card">
+      <h3>📚 Buku paling tebal punya lebih dari 2 juta kata</h3>
+      <p>*Remembrance of Things Past* oleh Marcel Proust.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌿 Tanaman bisa "mendengar"</h3>
+      <p>Beberapa tanaman merespons suara dan getaran.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🍌 Pisang adalah beri, tapi stroberi tidak</h3>
+      <p>Secara botani, stroberi bukan beri sejati.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌋 Ada "gunung api es" di luar angkasa</h3>
+      <p>Letusannya bukan lava, tapi es dan metana cair!</p>
+    </div>
+    <div class="fact-card">
+      <h3>🚽 Toilet pesawat hisapnya lebih kuat dari vacuum cleaner</h3>
+      <p>Jangan duduk terlalu lama setelah flush!</p>
+    </div>
+    <div class="fact-card">
+      <h3>😴 Anda bisa "ngompol" dalam mimpi tanpa sadar</h3>
+      <p>Kondisi ini disebut *lucid false awakening*.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🎨 Warna ungu dulunya hanya untuk bangsawan</h3>
+      <p>Dibuat dari siput laut, sangat mahal!</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌈 Pelangi bisa muncul di malam hari</h3>
+      <p>Disebut *moonbow*, saat bulan purnama terang.</p>
+    </div>
+    <div class="fact-card">
+      <h3>📦 Amazon dulu cuma jual buku</h3>
+      <p>Awalnya dimulai dari garasi kecil tahun 1994.</p>
+    </div>
+    <div class="fact-card">
+      <h3>🌥Awan punya berat hingga jutaan ton</h3>
+      <p>Satu awan cumulus bisa memiliki volume sekitar 1 km³ dan berat total mencapai sekitar 1 juta ton—namun tetap bisa mengambang karena densitasnya lebih rendah dari udara sekitar.</p>
+    </div>
+    <div class="fact-card">
+  <h3>🔥 Hujan berlian terjadi di Saturnus & Jupiter</h3>
+  <p>Tekanan tinggi mengubah karbon jadi berlian yang turun dari langit.</p>
+</div>
+<div class="fact-card">
+  <h3>🦦 Platipus bisa bersinar di bawah sinar UV</h3>
+  <p>Fur-nya memantulkan cahaya biru kehijauan saat terkena ultraviolet.</p>
+</div>
+<div class="fact-card">
+  <h3>🧠 Kita selalu "melihat" hidung sendiri</h3>
+  <p>Namun otak mengabaikannya agar tidak mengganggu pandangan.</p>
+</div>
+<div class="fact-card">
+  <h3>🌊 Oksigen di Bumi mayoritas berasal dari laut</h3>
+  <p>Fitoplankton dan alga menghasilkan 50–80% oksigen global.</p>
+</div>
+<div class="fact-card">
+  <h3>🔢 Semua angka itu menarik</h3>
+  <p>Jika ada angka "tidak menarik", maka itu malah jadi menarik!</p>
+</div>
+<div class="fact-card">
+  <h3>🩸 Mammoth beku ditemukan dengan darah cair</h3>
+  <p>Sisa jaringan lunak purba ditemukan di permafrost Siberia.</p>
+</div>
+<div class="fact-card">
+  <h3>☁️ Awan cumulus bisa seberat 1 juta ton</h3>
+  <p>Tapi tetap bisa melayang karena densitas rendah.</p>
+</div>
+<div class="fact-card">
+  <h3>🐘 Gajah 30× lebih rentan tersambar petir</h3>
+  <p>Karena ukuran tubuh dan medan terbuka tempat mereka tinggal.</p>
+</div>
+<div class="fact-card">
+  <h3>📡 ISS orbit Bumi setiap 92 menit</h3>
+  <p>Astronot melihat matahari terbit 16 kali dalam sehari!</p>
+</div>
+<div class="fact-card">
+  <h3>🍳 Panas trotoar bisa menggoreng telur</h3>
+  <p>Jika mencapai 70°C, cukup panas untuk memasak telur mentah.</p>
+</div>
+<div class="fact-card">
+  <h3>🦥 Sloth bisa tahan napas 40 menit</h3>
+  <p>Lebih lama daripada lumba-lumba!</p>
+</div>
+<div class="fact-card">
+  <h3>💧 Kaki bisa berkeringat 0.3 liter per hari</h3>
+  <p>Setiap kaki memiliki 250 ribu kelenjar keringat.</p>
+</div>
+<div class="fact-card">
+  <h3>🌩️ Satu petir bisa memanggang 20.000 roti</h3>
+  <p>Energinya bisa mencapai 1 miliar joule per sambaran.</p>
+</div>
+<div class="fact-card">
+  <h3>🩻 Panjang pembuluh darah bisa keliling Bumi</h3>
+  <p>Total panjangnya bisa mencapai 100.000 km!</p>
+</div>
+<div class="fact-card">
+  <h3>🚫 Astronot tidak bisa sendawa di luar angkasa</h3>
+  <p>Tanpa gravitasi, gas dan cairan tidak bisa terpisah di perut.</p>
+</div>
+<div class="fact-card">
+  <h3>🌪️ Ada 1800 badai petir terjadi setiap saat</h3>
+  <p>Secara global, setiap hari terjadi 16 juta badai petir.</p>
+</div>
+<div class="fact-card">
+  <h3>🦣 Hippo punya tabir surya alami</h3>
+  <p>Kulitnya mengeluarkan pigmen pelindung UV & antibakteri.</p>
+</div>
+<div class="fact-card">
+  <h3>🥶 Air panas bisa membeku lebih cepat dari air dingin</h3>
+  <p>Fenomena ini disebut efek Mpemba dan masih misteri ilmiah.</p>
+</div>
+<div class="fact-card">
+  <h3>🐍 Kecoak bernapas tanpa paru-paru</h3>
+  <p>Mereka menggunakan spirakel dan trakea langsung ke jaringan tubuh.</p>
+</div>
+<div class="fact-card">
+  <h3>🔋 Sidik jari terbentuk sejak janin</h3>
+  <p>Dipengaruhi oleh posisi jari dan cairan ketuban di trimester kedua.</p>
+</div>
+<div class="fact-card">
+  <h3>🌌 Luar angkasa berbau logam terbakar</h3>
+  <p>Astronot melaporkan aroma seperti pengelasan setelah spacewalk.</p>
+</div>
+  </main>
+
+<footer>
+  <p>Dibuat dengan 🧡 oleh Kyy | © 2025 Factasy</p>
+</footer>
+<script>
+  // Fungsi pencarian
+  const searchBox = document.getElementById("search-box");
+  const cards = document.querySelectorAll(".fact-card");
+
+  searchBox.addEventListener("input", () => {
+    const keyword = searchBox.value.toLowerCase();
+    cards.forEach(card => {
+      const text = card.innerText.toLowerCase();
+      card.style.display = text.includes(keyword) ? "block" : "none";
+    });
+  });
+
+  // Fungsi Hamburger
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  hamburger.addEventListener("click", () => {
+    mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+  });
+
+  // Klik di luar menu untuk menutup
+  window.addEventListener("click", (e) => {
+    if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+      mobileMenu.style.display = "none";
+    }
+  });
+</script>
+</body>
+</html>

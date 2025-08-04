@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Support | Factasy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fffdf8;
+      color: #333;
+      padding: 1rem;
+    }
+
+    .hamburger {
+      font-size: 2rem;
+      position: absolute;
+      top: 1rem;
+      right: 1.5rem;
+      cursor: pointer;
+      z-index: 1000;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .hamburger {
+        display: none;
+      }
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.3rem;
+      color: #ff7f50;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background-color: #fff7e6;
+      position: absolute;
+      top: 60px;
+      right: 1rem;
+      border: 1px solid #ffc;
+      border-radius: 10px;
+      padding: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    .mobile-menu ul {
+      list-style: none;
+    }
+
+    .mobile-menu li {
+      margin: 10px 0;
+    }
+
+    .mobile-menu a {
+      color: #ff8c42;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .mobile-menu a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #fff;
+      border: 2px dashed #ffe4c4;
+      border-radius: 12px;
+      box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    main h2 {
+      font-size: 1.8rem;
+      color: #ff8c42;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    main p, main li {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+    }
+
+    main a {
+      color: #ff7f50;
+      font-weight: bold;
+    }
+
+    main ul {
+      padding-left: 1.2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.95rem;
+      background: linear-gradient(90deg, #ffecd2, #fcb69f);
+      color: #333;
+      margin-top: 2rem;
+      border-top: 2px dashed #ffa07a;
+    }
+
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="hamburger">&#9776;</div>
+    <img src="logo.jpg" alt="Factasy Logo" class="logo" />
+    <h1>Butuh Bantuan?</h1>
+    <p>Kami siap membantumu 💬</p>
+  </header>
+
+  <nav class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="home.html">Beranda</a></li>
+      <li><a href="support.html">Support</a></li>
+    </ul>
+  </nav>
+
+<main>
+  <h2>Hubungi Kami</h2>
+  <p>Jika kamu menemukan bug, saran, atau pertanyaan mengenai <strong>Factasy</strong>, silakan hubungi kami melalui:</p>
+  <ul>
+    <li><i class="fa-solid fa-envelope"></i> Email: <a href="mailto:yab9145@gmail.com">yab9145@gmail.com</a></li>
+    <li><i class="fab fa-instagram"></i> Instagram: <a href="https://www.instagram.com/kyy_sensei_" target="_blank">@kyy_sensei_</a></li>
+    <li><i class="fab fa-x-twitter"></i> Twitter/X: <a href="https://x.com/Kyy_Reacher?t=1iCLEE3q1DRmJtkW5h2Vkw&s=09" target="_blank">@Kyy_Reacher</a></li>
+    <li><i class="fa-solid fa-mug-hot"></i> Dukung lewat Trakteer: <a href="https://trakteer.id/kydev" target="_blank">trakteer.id/kydev</a></li>
+  </ul>
+  <p>Kami akan berusaha membalas secepat mungkin. Terima kasih telah menggunakan Factasy! 🙌</p>
+</main>
+
+  <footer>
+    <p>Dibuat dengan 🧡 oleh Kyy | © 2025 Factasy</p>
+  </footer>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    hamburger.addEventListener("click", () => {
+      mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
+    });
+
+    window.addEventListener("click", (e) => {
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+        mobileMenu.style.display = "none";
+      }
+    });
+  </script>
+</body>
+</html>
